@@ -1,11 +1,8 @@
 import { useState } from "react";
 import './App.css';
-
 import routes from "./config/routes";
 import { Routes, Route } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
-import { SignInSide} from './components'
 
 
 function App() {
@@ -22,7 +19,7 @@ function App() {
 
       <Routes>
         {routes({ user, authentication }).map(
-          ({ path, element }) => (
+          ({ path, element }, index_route) => (
             <Route key={path} {...{ path, element }} />
           )
         )}

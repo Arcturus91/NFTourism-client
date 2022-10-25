@@ -12,10 +12,12 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { /* Link, */ useLocation, useNavigate } from "react-router-dom";
+import { loginWs, signupWs } from "../services/auth-ws";
 
-function Copyright(props) {
+function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant="body2" color="text.secondary" align="center" >
       {'Copyright © '}
       <Link color="inherit" href="https://github.com/Arcturus91/">
         SolTickets
@@ -28,16 +30,41 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
+export default function SignInSide(props) {
+console.log(props)
+  const location = useLocation();
+  
+  const navigate = useNavigate();
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
+console.log(event)
 //here is where we have the axios call
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+
+   let  values = {
+    email: data.get('email'),
+    password: data.get('password'),
+    confirmPassword: data.get('confirmPassword'),
+    lastName: data.get('lastName'),
+    firstName: data.get('firstName')
+  }
+    console.log("lo que envío",values);
+
+    signupWs(values).then((res) => {
+      const { data, status, errorMessage } = res;
+      if (status) {
+        props.authentication(data.user);
+       
+         navigate('/profile') 
+        return;
+      } else {
+       console.log(errorMessage)
+      }
     });
+
+   
 
 
   };
@@ -91,8 +118,38 @@ export default function SignInSide() {
                 margin="normal"
                 required
                 fullWidth
+                id="firstName"
+                label="First Name"
+                name="firstName"
+                autoComplete="firstName"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="lastName"
+                label="last Name"
+                name="lastName"
+                autoComplete="lastName"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
                 name="password"
                 label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="confirmPassword"
+                label="Confirm Password"
                 type="password"
                 id="password"
                 autoComplete="current-password"

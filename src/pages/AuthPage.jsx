@@ -1,10 +1,10 @@
 import {SignInSide} from '../components'
 
-const AuthPage = () =>{
+const AuthPage = (props) =>{
 
 return (
 
-    <SignInSide/>
+    <SignInSide {...props}/>
 )
 
 
