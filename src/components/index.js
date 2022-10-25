@@ -1,1 +1,1 @@
-export {default as SignInSide} from './signIn'
+export {default as SignInSide} from './SignInSide'

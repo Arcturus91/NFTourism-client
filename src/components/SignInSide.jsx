@@ -17,8 +17,8 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://github.com/Arcturus91/">
+        SolTickets
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -31,11 +31,15 @@ const theme = createTheme();
 export default function SignInSide() {
   const handleSubmit = (event) => {
     event.preventDefault();
+
+//here is where we have the axios call
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     });
+
+
   };
 
   return (
@@ -48,7 +52,7 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage: 'url(https://i.natgeofe.com/n/e9f83bca-c0cf-447c-bcc4-cc2f421e2669/plaza-mayor-dusk-lima-peru.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
