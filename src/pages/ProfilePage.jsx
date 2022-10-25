@@ -14,9 +14,9 @@ return (
 
     
 
-<Container maxWidth="sm">
+<Container maxWidth="md" >
 
-<Stack direction="row" sx={{justifyContent: 'center'}} >
+<Stack direction="row" sx={{justifyContent: 'center',m:5}} >
       <Avatar 
       alt="user" 
       src="https://res.cloudinary.com/dad5dandd
@@ -28,7 +28,7 @@ sx={{ width: 100, height: 100 }} />
 
     <Divider />
 
-    <EnhancedTable/>
+    <EnhancedTable />
 
 
       </Container>

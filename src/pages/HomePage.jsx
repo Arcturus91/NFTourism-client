@@ -1,13 +1,16 @@
+import { Container } from '@mui/material'
 import React from 'react'
 import  {EnhancedTable} from '../components'
 
 const HomePage = () => {
   return (
-    <div>Sol tickets! yey!
+    <Container maxWidth="md">
+    
+    <p>Sol tickets! yey!</p>
     
     <EnhancedTable/>
     
-     </div>
+     </Container>
   )
 }
 
