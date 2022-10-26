@@ -1,12 +1,14 @@
 import { Container } from '@mui/material'
 import React from 'react'
-import  {EnhancedTable} from '../components'
+import  {EnhancedTable, RoutesPicsList} from '../components'
 
 const HomePage = () => {
   return (
     <Container maxWidth="md">
     
-    <p>Sol tickets! yey!</p>
+    <h1>Welcome to Soltickets!</h1>
+
+    <RoutesPicsList/>
     
     <EnhancedTable/>
     

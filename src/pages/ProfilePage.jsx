@@ -33,6 +33,18 @@ sx={{ width: 100, height: 100 }} />
     <Box sx={{ width: '100%', alignContent: 'center'  }} >
       <Typography variant="h2" gutterBottom>
         Welcome { props.user.firstName }
+      
+      </Typography>
+
+      <Typography variant="h6" gutterBottom>
+        
+       <br/>
+       ID: 63585b5980fd97a338d1af15
+      </Typography>
+      <Typography variant="h6" gutterBottom>
+       
+        <br/>
+        Wallet Solana address number: xxxxxxxxxxx
       </Typography>
       <Typography variant="h6" gutterBottom>
         Check the route you wanna try <BackpackIcon/>

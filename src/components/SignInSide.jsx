@@ -138,6 +138,16 @@ console.log(event)
                 margin="normal"
                 required
                 fullWidth
+                id="walletAddress"
+                label="Solana Wallet Address"
+                name="walletAddress"
+                autoComplete="walletAddress"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
                 name="password"
                 label="Password"
                 type="password"
