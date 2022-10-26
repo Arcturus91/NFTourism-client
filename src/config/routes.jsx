@@ -1,4 +1,4 @@
-import { AuthPage, HomePage, ProfilePage } from "../pages";
+import { SignUpPage, HomePage, ProfilePage,LogInPage } from "../pages";
 
 const routes = (props) => {
   return [
@@ -8,7 +8,11 @@ const routes = (props) => {
     },
     {
       path: "/signup",
-      element: <AuthPage {...props} />, 
+      element: <SignUpPage {...props} />, 
+    },
+    {
+      path: "/login",
+      element: <LogInPage {...props} />, 
     },
  
     {

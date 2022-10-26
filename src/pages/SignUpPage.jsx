@@ -1,6 +1,6 @@
 import {SignInSide} from '../components'
 
-const AuthPage = (props) =>{
+const SignUpPage = (props) =>{
 
 return (
 
@@ -10,5 +10,5 @@ return (
 
 }
 
-export default AuthPage;
+export default SignUpPage;
 
