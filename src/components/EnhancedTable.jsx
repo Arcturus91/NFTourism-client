@@ -184,6 +184,9 @@ function EnhancedTableToolbar(props) {
           {numSelected} selected
         </Typography>
       ) : (
+        
+       
+      
         <Typography
           sx={{ flex: '1 1 100%' }}
           variant="h6"
@@ -192,6 +195,7 @@ function EnhancedTableToolbar(props) {
         >
           The Touristic Routes
         </Typography>
+        
       )}
 
       {numSelected > 0 ? (

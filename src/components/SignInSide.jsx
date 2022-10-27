@@ -39,7 +39,7 @@ console.log(props)
 
   const handleSubmit = (event) => {
     event.preventDefault();
-console.log(event)
+//console.log(event)
 //here is where we have the axios call
     const data = new FormData(event.currentTarget);
 
@@ -48,9 +48,10 @@ console.log(event)
     password: data.get('password'),
     confirmPassword: data.get('confirmPassword'),
     lastName: data.get('lastName'),
-    firstName: data.get('firstName')
+    firstName: data.get('firstName'),
+    walletAddress:data.get('walletAddress')
   }
-    console.log("lo que envío",values);
+    console.log("what i send",values);
 
     signupWs(values).then((res) => {
       const { data, status, errorMessage } = res;
@@ -196,3 +197,4 @@ console.log(event)
     </ThemeProvider>
   );
 }
+

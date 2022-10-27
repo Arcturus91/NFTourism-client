@@ -1,5 +1,5 @@
-import { Container, Grid ,Divider,Box} from "@mui/material";
-import Typography from '@mui/material/Typography';
+import { Container, Grid, Divider, Box } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import React from "react";
 import {
   EnhancedTable,
@@ -9,79 +9,143 @@ import {
 
 const HomePage = () => {
   return (
-    <Container maxWidth="lg" className="home-page">
+    <Container className="home-page">
+      <Typography variant="h2" color="white" style={{backgroundColor:"black"}}>
+        Welcome to NFTurismPerú!
+      </Typography>
 
-      <h1 style={{marginBottom:'100'}}>Welcome to Soltickets!</h1>
+      <div style={{ display: "flex", justifyContent: "flex-start" }}>
+        <Box
+          sx={{
+            width: 300,
+            height: 200,
+            display: "flex",
+            p: 2,
+            minWidth: 300,
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h3" color="red">
+            1
+          </Typography>
 
-<Box sx={{width: 300,
-        height: 300}}>
-      <Typography variant="body1" color="white">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        </Typography>
-</Box>
+          <Typography variant="body1" color="white">
+            Muchos de los extranjeros que visitan perú llegan a lima con el
+            propósito de hacer transbordo a cuzco y los días que se quedan en
+            lima no saben qué hacer. Nuestra misión es conectar el turismo de
+            las ciudades del perú con rutas e itinerarios más dinámicos,
+          </Typography>
+        </Box>
+      </div>
 
-      <Grid container spacing={3} sx={{mt:50, mb:10}}>
-        <Grid xs={4} >
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Box
+          sx={{
+            width: 300,
+            height: 200,
+            display: "flex",
+            p: 2,
+            minWidth: 300,
+            flexDirection: "column",
+            alignItems: "center",
+            mt:10
+          }}
+        >
+          <Typography variant="h3" color="red">
+            2
+          </Typography>
 
-        <CountryRouteReviewCard
-        travelRoute={"Amazonian Route"}
-        travelLink={"amazonianroute"}
-        picLink={
-          "https://turismoi.pe/uploads/photo/version3/photo_file/71802/optimized_kuelap_1.jpg"
-        }
-      />
+          <Typography variant="body1" color="white">
+            Muchos de los extranjeros que visitan perú llegan a lima con el
+            propósito de hacer transbordo a cuzco y los días que se quedan en
+            lima no saben qué hacer. Nuestra misión es conectar el turismo de
+            las ciudades del perú con rutas e itinerarios más dinámicos,
+          </Typography>
+        </Box>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "flex-start" }}>
+        <Box
+          sx={{
+            width: 300,
+            height: 200,
+            display: "flex",
+            p: 2,
+            minWidth: 300,
+            flexDirection: "column",
+            alignItems: "center",
+            ml: 10,
+          }}
+        >
+          <Typography variant="h3" color="red">
+            3
+          </Typography>
+
+          <Typography variant="body1" color="white">
+            Muchos de los extranjeros que visitan perú llegan a lima con el
+            propósito de hacer transbordo a cuzco y los días que se quedan en
+            lima no saben qué hacer. Nuestra misión es conectar el turismo de
+            las ciudades del perú con rutas e itinerarios más dinámicos,
+          </Typography>
+        </Box>
+      </div>
+
+      <Typography variant="h3" color="white" sx={{ mt: 20 }}>
+        The Country Level Routes
+      </Typography>
+
+      <Grid container spacing={3} column={{ xs: 1, sm: 2, md: 3 }} sx={{ mt: 10, mb: 10 }}>
+        <Grid xs={4} sx={{ mt: 2, mb: 2 }}>
+          <CountryRouteReviewCard
+            travelRoute={"Amazonian Route"}
+            travelLink={"amazonianroute"}
+            picLink={
+              "https://turismoi.pe/uploads/photo/version3/photo_file/71802/optimized_kuelap_1.jpg"
+            }
+          />
         </Grid>
 
-        <Grid xs={4} >
-  
-        <CountryRouteReviewCard
-        travelRoute={"Inca Route"}
-        travelLink={"incaroute"}
-        picLink={
-          "https://viajes.nationalgeographic.com.es/medio/2022/08/31/machu-picchu_8c3f78f9_800x800.jpg"
-        }
-      />
+        <Grid xs={4} sx={{ mt: 2, mb: 2 }}>
+          <CountryRouteReviewCard
+            travelRoute={"Inca Route"}
+            travelLink={"incaroute"}
+            picLink={
+              "https://viajes.nationalgeographic.com.es/medio/2022/08/31/machu-picchu_8c3f78f9_800x800.jpg"
+            }
+          />
         </Grid>
 
-
-        <Grid xs={4} >
-        <CountryRouteReviewCard
-        travelRoute={"Religious Route"}
-        travelLink={"religiousroute"}
-        picLink={
-          "https://sobre-peru.com/wp-content/uploads/catedral-de-lima.jpg"
-        }
-      />
+        <Grid xs={4} sx={{ mt: 2, mb: 2 }}>
+          <CountryRouteReviewCard
+            travelRoute={"Religious Route"}
+            travelLink={"religiousroute"}
+            picLink={
+              "https://sobre-peru.com/wp-content/uploads/catedral-de-lima.jpg"
+            }
+          />
         </Grid>
 
-        <Grid xs={4} >
-        <CountryRouteReviewCard
-        travelRoute={"Historic centre"}
-        travelLink={"historiccentre"}
-        picLink={
-          "https://www.peru.travel/Contenido/Atractivo/Imagen/es/14/1.1/Principal/centro-historico-de-lima.jpg"
-        }
-      />
+        <Grid xs={4} sx={{ mt: 2, mb: 2 }}>
+          <CountryRouteReviewCard
+            travelRoute={"Historic centre"}
+            travelLink={"historiccentre"}
+            picLink={
+              "https://www.peru.travel/Contenido/Atractivo/Imagen/es/14/1.1/Principal/centro-historico-de-lima.jpg"
+            }
+          />
         </Grid>
 
-        <Grid xs={4} >
-        <CountryRouteReviewCard
-        travelRoute={"Hispter Route"}
-        travelLink={"religiousroute"}
-        picLink={
-          "https://www.peru.travel/Contenido/General/Imagen/es/500/1.1/Barranco_distrito_portada.jpg"
-        }
-      />
+        <Grid xs={4} sx={{ mt: 2, mb: 2 }}>
+          <CountryRouteReviewCard
+            travelRoute={"Hispter Route"}
+            travelLink={"religiousroute"}
+            picLink={
+              "https://www.peru.travel/Contenido/General/Imagen/es/500/1.1/Barranco_distrito_portada.jpg"
+            }
+          />
         </Grid>
-
-
-
-
       </Grid>
-
-     
-
-      
     </Container>
   );
 };
