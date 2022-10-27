@@ -33,8 +33,8 @@ function createData(name, kilometers, places, cost, time) {
 }
 
 const rows = [
-  createData('La colonial', 10, 3, 7, 4.3),
-  createData('La independencia', 5, 25.0, 51, 4.9),
+  createData('Inca', 10, 3, 7, 4.3),
+  createData('Amazonian', 5, 25.0, 51, 4.9),
   createData('Hipster Lima', 5, 6.0, 24, 6.0),
   createData('Historic center', 7, 6.0, 24, 4.0),
   createData('La religiosa', 9, 7, 49, 3.9),
