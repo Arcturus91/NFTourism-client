@@ -130,7 +130,7 @@ console.log(props)
                 required
                 fullWidth
                 id="lastName"
-                label="last Name"
+                label="Last Name"
                 name="lastName"
                 autoComplete="lastName"
                 autoFocus

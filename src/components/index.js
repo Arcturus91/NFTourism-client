@@ -5,4 +5,5 @@ export { default as Navbar} from './Navbar'
 export { default as RoutesPicsList} from './RoutesPicsList'
 export {default as SendSOLToRandomAddress} from './SendSOLToRandomAddress'
 export {default as CountryRouteReviewCard} from './CountryLevelRoutes'
-//ADcZkjWSuZxDV5hLCfdUm6yqoJwkN2otUKW2tyPVh1Rz
+export { default as StickyFooter } from './Footer'
+export { default as UploadButtons} from './ButtonUpload'

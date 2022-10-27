@@ -53,11 +53,8 @@ export default function SendSOLToRandomAddress(props) {
 variant="contained" 
 style={{backgroundColor: "#512da8",height:48}}
  onClick={onClick}
- 
- >
-        
-Send SOLANA
-        
+ > 
+Send SOLANA 
 </Button>
  ):null}
 

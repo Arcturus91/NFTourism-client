@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import { Routes, Route } from "react-router-dom";
 import { logoutWs } from "./services/auth-ws";
 import { useNavigate } from "react-router-dom";
-import { Navbar, SendSOLToRandomAddress } from "./components";
+import { Navbar, SendSOLToRandomAddress , StickyFooter} from "./components";
 import { clusterApiUrl } from "@solana/web3.js";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
@@ -97,6 +97,7 @@ const Content = () => {
           )
         )}
       </Routes>
+      <StickyFooter/>
     </div>
   );
 };
