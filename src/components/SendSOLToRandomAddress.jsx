@@ -49,7 +49,7 @@ export default function SendSOLToRandomAddress(props) {
 
     return (
  <>
-{publicKey? (<Button 
+{(publicKey && user.role === "Admin")? (<Button 
 variant="contained" 
 style={{backgroundColor: "#512da8",height:48}}
  onClick={onClick}
