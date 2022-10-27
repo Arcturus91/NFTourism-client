@@ -14,6 +14,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Link} from "react-router-dom";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -33,8 +35,11 @@ export default function CountryRouteReviewCard(props) {
     setExpanded(!expanded);
   };
 
-  const {travelRoute,picLink} = props
-  console.log(travelRoute,picLink)
+  const {travelRoute,picLink,travelLink} = props
+ 
+const traveLinkF = "/" + travelLink
+ 
+ console.log(traveLinkF)
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -64,12 +69,13 @@ export default function CountryRouteReviewCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
+
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+            
+           <Link to={traveLinkF}>See more <OpenInNewIcon /> </Link>
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        
+
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

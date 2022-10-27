@@ -3,6 +3,7 @@ import * as React from 'react';
 import {AppBar,  Toolbar,  Typography, Container,  Button, } from '@mui/material/'
 import LoginIcon from '@mui/icons-material/Login';
 import { Link } from "react-router-dom";
+import AddHomeIcon from '@mui/icons-material/AddHome';
 
 
 const Navbar = (props) => {
@@ -57,6 +58,12 @@ const Navbar = (props) => {
           <Link to="/login"  style={{ textDecoration: 'none', color: 'inherit' }}>
           <Button variant="contained" endIcon={<LoginIcon />} disableRipple>     
           Log in
+        </Button>
+          </Link>
+
+          <Link to="/"  style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Button variant="contained" endIcon={<AddHomeIcon />} disableRipple>     
+          Home
         </Button>
           </Link>
 

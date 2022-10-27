@@ -11,15 +11,20 @@ export default function SendSOLToRandomAddress() {
         if (!publicKey) throw new WalletNotConnectedError();
 
         // 890880 lamports as of 2022-09-01
+        
         const lamports = await connection.getMinimumBalanceForRentExemption(0);
 
         const transaction = new Transaction().add(
             SystemProgram.transfer({
                 fromPubkey: publicKey,
-                toPubkey: Keypair.generate().publicKey,
-                lamports,
+                toPubkey: "ADcZkjWSuZxDV5hLCfdUm6yqoJwkN2otUKW2tyPVh1Rz", 
+               lamports 
             })
         );
+        //toPubkey: params.choosenAddress ==> esto es como lo tendremos
+        //lamports:Number(params.choosenAmount) ==> esto es como lo tendremos
+
+        console.log("yo soy la transaccion", transaction)
 
         const {
             context: { slot: minContextSlot },
@@ -28,12 +33,21 @@ export default function SendSOLToRandomAddress() {
 
         const signature = await sendTransaction(transaction, connection, { minContextSlot });
 
-        await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature });
+        console.log("yo soy signature", signature)
+
+       const confirmation =  await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature });
+
+       console.log("yo soy confirmation", confirmation)
+
     }, [publicKey, sendTransaction, connection]);
 
     return (
         <button onClick={onClick} disabled={!publicKey}>
-            Send SOL to a random address!
+            Send SOL to: 
+            
         </button>
     );
 };
+
+//for inspecting transaction
+//https://solscan.io/account/ADcZkjWSuZxDV5hLCfdUm6yqoJwkN2otUKW2tyPVh1Rz?cluster=devnet

@@ -1,4 +1,4 @@
-import { SignUpPage, HomePage, ProfilePage,LogInPage } from "../pages";
+import { SignUpPage, HomePage, ProfilePage,LogInPage, ReligiousPage } from "../pages";
 
 const routes = (props) => {
   return [
@@ -18,6 +18,18 @@ const routes = (props) => {
     {
       path: "/profile",
       element: <ProfilePage {...props} />,
+    },
+    {
+      path: "/amazonianroute",
+      element: <ReligiousPage {...props} />,
+    },
+    {
+      path: "/religiousroute",
+      element: <ReligiousPage {...props} />,
+    },
+    {
+      path: "/incaroute",
+      element: <ReligiousPage {...props} />,
     },
   ];
 };

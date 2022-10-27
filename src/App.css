@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 
 .App-logo {
@@ -26,6 +27,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/* 
+https://i.pinimg.com/originals/1b/0c/e2/1b0ce233df36e4a0be8b7c6b74165627.jpg */
+
+.home-page{
+  background-image:url("https://i.pinimg.com/originals/1b/0c/e2/1b0ce233df36e4a0be8b7c6b74165627.jpg");
+  background-repeat:no-repeat;
+  height:100%;
+  padding-top: 20px;
+}
+
+.home-page >h1 {
+  color:white
 }
 
 @keyframes App-logo-spin {
