@@ -39,7 +39,7 @@ export default function CountryRouteReviewCard(props) {
  
 const traveLinkF = "/" + travelLink
  
- console.log(traveLinkF)
+
 
   return (
     <Card sx={{ maxWidth: 345 }}>

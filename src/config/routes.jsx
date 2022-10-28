@@ -1,4 +1,4 @@
-import { SignUpPage, HomePage, ProfilePage,LogInPage, ReligiousPage } from "../pages";
+import { SignUpPage, HomePage, ProfilePage,LogInPage, ReligiousPage, SendSolanaPage } from "../pages";
 
 const routes = (props) => {
   return [
@@ -31,6 +31,10 @@ const routes = (props) => {
       path: "/incaroute",
       element: <ReligiousPage {...props} />,
     },
+    {
+      path: "/sendSolana",
+      element: <SendSolanaPage {...props} />,
+    }
   ];
 };
 

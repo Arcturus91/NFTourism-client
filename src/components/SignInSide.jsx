@@ -52,7 +52,6 @@ console.log(props)
     firstName: data.get('firstName'),
     walletAddress:data.get('walletAddress')
   }
-    console.log("what i send",values);
 
     signupWs(values).then((res) => {
       const { data, status, errorMessage } = res;

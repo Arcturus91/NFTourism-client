@@ -38,19 +38,18 @@ const UploadButtons = ({
     
     
     const image = e.target.files[0]; //aqui está almacenado toda la imagen.
-    console.log("yo soy " , image)
+  
     const formData = new FormData();
     formData.append("image", image);
-    console.log("yo soy formData", formData)
 
     Axios.post(uploadURL,formData).then(
       (responseAxios)=>{
       
-        console.log("yo soy url imagen subida", responseAxios.data.url.uri)
+        console.log("img uploaded url", responseAxios.data.url.uri)
     registerReceipt(formData)
       .then((res) => {
         if (res.status) {
-          console.log("yo soy res de upload", res.data)
+          console.log("res upload", res.data)
           
         } else {
           console.log(res.data.errorMessage)
@@ -78,7 +77,7 @@ const UploadButtons = ({
                 />
 
 <label htmlFor="icon-button-file" >
-                Upload your picture
+                Have you started? Upload your picture
               </label>
                 </Button>
 
@@ -101,22 +100,4 @@ const UploadButtons = ({
 
 export default UploadButtons;
 
-/* 
 
-    
-      <Button variant="contained" component="label">
-        Upload
-        <input hidden accept="image/*" multiple type="file" />
-      </Button>
-
-      <IconButton color="primary" aria-label="upload picture" component="label">
-        <input hidden accept="image/*" type="file" />
-        <
-      </IconButton>
-    
-
-
-
-
-    
-    */

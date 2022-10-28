@@ -31,7 +31,7 @@ function Copyright() {
 const theme = createTheme();
 
 export default function LogIn(props) {
-console.log(props)
+
   const location = useLocation();
   
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ console.log(props)
 
   const handleSubmit = (event) => {
     event.preventDefault();
-console.log(event)
+
 //here is where we have the axios call
     const data = new FormData(event.currentTarget);
 

@@ -54,7 +54,6 @@ const Context = ({ children }) => {
   );
 };
 const Content = () => {
-  console.log("i am web3, buttonn", solanaWeb3);
 
   const [user, setUser] = useState(null);
 
@@ -92,8 +91,8 @@ const Content = () => {
 
       <Routes>
         {routes({ user, authentication }).map(
-          ({ path, element }, index_route) => (
-            <Route key={path} {...{ path, element }} />
+          (item) => (
+            <Route key={item.path} {...item} />
           )
         )}
       </Routes>

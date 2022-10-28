@@ -6,10 +6,11 @@ import Button from '@mui/material/Button';
 
 export default function SendSOLToRandomAddress(props) {
 
-    console.log("yo soy props", props)
+   
 
     const {user} = props 
-    console.log("yo soy user", user)
+console.log("user: ", user)
+
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
 
@@ -30,7 +31,7 @@ export default function SendSOLToRandomAddress(props) {
         //toPubkey: params.choosenAddress ==> esto es como lo tendremos
         //lamports:Number(params.choosenAmount) ==> esto es como lo tendremos
 
-        console.log("yo soy la transaccion", transaction)
+        console.log("am transaction", transaction)
 
         const {
             context: { slot: minContextSlot },
@@ -39,11 +40,11 @@ export default function SendSOLToRandomAddress(props) {
 
         const signature = await sendTransaction(transaction, connection, { minContextSlot });
 
-        console.log("yo soy signature", signature)
+        console.log("Signature", signature)
 
        const confirmation =  await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature });
 
-       console.log("yo soy confirmation", confirmation)
+       console.log("Confirmation", confirmation)
 
     }, [publicKey, sendTransaction, connection]);
 
