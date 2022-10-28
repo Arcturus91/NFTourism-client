@@ -16,6 +16,7 @@ import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { Keypair, SystemProgram, Transaction } from "@solana/web3.js";
 import { FC, useCallback } from "react";
+import * as solanaWeb3 from "@solana/web3.js";
 
 const theme = createTheme();
 
@@ -44,13 +45,14 @@ const handleSubmit = (event) => {
   
  const onClick= useCallback(async () => {
 
-    console.log("sime ejecuto", destinataryAddress)
+    console.log("soy amount input", sendAmount )
       if (!publicKey) throw new WalletNotConnectedError();
   
       // 890880 lamports as of 2022-09-01
-  
-      const lamports = await connection.getMinimumBalanceForRentExemption(0);
-  
+  const costInLamports = await connection.getMinimumBalanceForRentExemption(0);
+const lamports = (Number(solanaWeb3.LAMPORTS_PER_SOL))*sendAmount  // esto es 1
+   //sendAmount = 100, number
+  console.log("yo soy lamports", lamports)
       const transaction = new Transaction().add(
         SystemProgram.transfer({
           fromPubkey: publicKey,
@@ -58,9 +60,7 @@ const handleSubmit = (event) => {
           lamports,
         })
       );
-      //toPubkey: params.choosenAddress ==> esto es como lo tendremos
-      //lamports:Number(params.choosenAmount) ==> esto es como lo tendremos
-  
+    
       console.log("am transaction", transaction);
   
       const {
@@ -81,7 +81,7 @@ const handleSubmit = (event) => {
       });
   
       console.log("Confirmation", confirmation);
-    }, [publicKey, sendTransaction, connection/* ,destinataryAddress,sendAmount */]);
+    }, [publicKey, sendTransaction, connection,sendAmount]);
 
 
 console.log("solana input", user)

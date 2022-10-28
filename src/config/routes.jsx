@@ -14,6 +14,8 @@ const routes = (props) => {
       path: "/login",
       element: <LogInPage {...props} />, 
     },
+
+    
  
     {
       path: "/profile",

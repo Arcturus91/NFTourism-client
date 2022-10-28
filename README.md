@@ -1,71 +1,139 @@
-# Getting Started with Create React App
+# NFTurist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A NFT for turist in Peru 💰
 
-## Available Scripts
+## Features:
 
-In the project directory, you can run:
+- ✍️ Register places visited
+- 📱 Get the user images and convert them to nft
+- 👨‍💼 Includes a button to generate the wallet and another button to link the wallet
+- ✍️ Register user in NFTourist
+- 📈 Certify the user of his visit through an nft
+  > >
 
-### `npm start`
+## Admin Routes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **Credentials**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Administrator:**
+  Correo electrónico:
+  Contraseña:
 
-### `npm test`
+- **Recently registered user:**
+  Correo electrónico:
+  Contraseña:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Admin Routes
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **POST** profile
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+http://localhost:3000/myprofile
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+{
+  "email": "arc@gmail.com",
+  "password": "12345"
+}
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+\*\*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## User Routes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### **GET** profile
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+http://localhost:5005/api/user/my-profile
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Headers Content-Type application/json
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Auth Routes
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **GET** logout
 
-### Making a Progressive Web App
+```
+http://localhost:3000/logout
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### **POST** loginAdmin
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+http://localhost:3000/login
+```
 
-### Deployment
+```
+{
+  "email": "admin@gmail.com",
+  "password": "12345"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### **POST** loginUser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# soltickets-client
+```
+http://localhost:3000/login
+```
+
+```
+{
+  "email": "arc@gmail.com",
+  "password": "12345"
+}
+```
+
+---
+
+### **POST** signUpAdmin
+
+```
+http://localhost:3000/signup
+```
+
+```
+{
+  "email": "admin@gmail.com",
+  "password": "12345",
+  "confirmPassword": "12345",
+  "firstName": "Victor",
+  "lastName": "Barrantes"
+}
+```
+
+---
+
+### **POST** signUpUser
+
+```
+http://localhost:3000/signup
+```
+
+```
+{
+  "email": "arc@gmail.com",
+  "password": "12345",
+  "confirmPassword": "12345",
+  "firstName": "Arturo",
+  "lastName": "Barrantes"
+}
+```
+
+---
