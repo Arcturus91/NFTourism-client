@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import { Routes, Route } from "react-router-dom";
 import { logoutWs } from "./services/auth-ws";
 import { useNavigate } from "react-router-dom";
-import { Navbar, SendSOLToRandomAddress , StickyFooter} from "./components";
+import { Navbar, StickyFooter } from "./components";
 import { clusterApiUrl } from "@solana/web3.js";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
@@ -54,7 +54,6 @@ const Context = ({ children }) => {
   );
 };
 const Content = () => {
-
   const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
@@ -81,22 +80,18 @@ const Content = () => {
 
       {user ? (
         <>
-          <Stack spacing={2} direction="row" sx={{ justifyContent: 'center' }} >
-            
+          <Stack spacing={2} direction="row" sx={{ justifyContent: "center" }}>
             <WalletMultiButton />
-            <SendSOLToRandomAddress user={user} />
           </Stack>
         </>
       ) : null}
 
       <Routes>
-        {routes({ user, authentication }).map(
-          (item) => (
-            <Route key={item.path} {...item} />
-          )
-        )}
+        {routes({ user, authentication }).map((item) => (
+          <Route key={item.path} {...item} />
+        ))}
       </Routes>
-      <StickyFooter/>
+      <StickyFooter />
     </div>
   );
 };

@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
 
 export default function UsersList(props) {
+
+  
   const { users } = props;
   console.log("props in userList", users);
 
@@ -17,7 +19,7 @@ export default function UsersList(props) {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 750 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>User ID</TableCell>
@@ -38,7 +40,7 @@ export default function UsersList(props) {
                 {row._id}
               </TableCell>
               <TableCell align="right">
-              <Tooltip title="Send Solana to this user">
+              <Tooltip title="Copy the address and click">
                 <Link to="/sendSolana">{row.walletAddress}</Link>
                 </Tooltip>
               </TableCell>

@@ -1,14 +1,7 @@
-import {SignInSide} from '../components'
+import { SignInSide } from "../components";
 
-const SignUpPage = (props) =>{
-
-return (
-
-    <SignInSide {...props}/>
-)
-
-
-}
+const SignUpPage = (props) => {
+  return <SignInSide {...props} />;
+};
 
 export default SignUpPage;
-

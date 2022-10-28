@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { SolanaInput } from "../components";
 
-const SendSolanaPage = () => {
-  return (
-    <div>SendSolana</div>
-  )
-}
+const SendSolanaPage = (props) => {
+  const { user } = props;
 
-export default SendSolanaPage
+  return <SolanaInput user={user} />;
+};
+
+export default SendSolanaPage;
