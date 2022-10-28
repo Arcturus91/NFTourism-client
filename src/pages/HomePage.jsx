@@ -91,6 +91,7 @@ const HomePage = () => {
           <CountryRouteReviewCard
             travelRoute={"Amazonian Route"}
             travelLink={"amazonianroute"}
+            introText={"Amazonian: In this route you will meet a beautiful variety of flora and fauna, while on the tour you will find unique sounds, great areas to explore and beautiful natural arts."}
             picLink={
               "https://turismoi.pe/uploads/photo/version3/photo_file/71802/optimized_kuelap_1.jpg"
             }
@@ -101,6 +102,7 @@ const HomePage = () => {
           <CountryRouteReviewCard
             travelRoute={"Inca Route"}
             travelLink={"incaroute"}
+            introText={"Inca: In this route you will know the most important archaeological sites of Cusco, you will be able to observe the greatness of the Inca empire."}
             picLink={
               "https://viajes.nationalgeographic.com.es/medio/2022/08/31/machu-picchu_8c3f78f9_800x800.jpg"
             }
@@ -111,6 +113,8 @@ const HomePage = () => {
           <CountryRouteReviewCard
             travelRoute={"Religious Route"}
             travelLink={"religiousroute"}
+            introText={"Hipster Lima: You will visit places full of charm, art and tradition, where artists are the main characters of their stories."}
+
             picLink={
               "https://sobre-peru.com/wp-content/uploads/catedral-de-lima.jpg"
             }
@@ -121,6 +125,8 @@ const HomePage = () => {
           <CountryRouteReviewCard
             travelRoute={"Historic centre"}
             travelLink={"historiccentre"}
+            introText={"Historic center: In this route you will get to know one of the most historically relevant areas of Peru, besides that you will be able to observe the most illustrious examples of Spanish monumental architecture."}
+
             picLink={
               "https://www.peru.travel/Contenido/Atractivo/Imagen/es/14/1.1/Principal/centro-historico-de-lima.jpg"
             }
@@ -131,6 +137,11 @@ const HomePage = () => {
           <CountryRouteReviewCard
             travelRoute={"Hispter Route"}
             travelLink={"religiousroute"}
+            introText={"The religious: In this route you will know the most important churches of Lima, some stand out for their beautiful architecture, others because they have great art collections."}
+
+            
+
+
             picLink={
               "https://www.peru.travel/Contenido/General/Imagen/es/500/1.1/Barranco_distrito_portada.jpg"
             }

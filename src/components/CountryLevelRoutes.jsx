@@ -35,7 +35,7 @@ export default function CountryRouteReviewCard(props) {
     setExpanded(!expanded);
   };
 
-  const {travelRoute,picLink,travelLink} = props
+  const {travelRoute,picLink,travelLink,introText} = props
  
 const traveLinkF = "/" + travelLink
  
@@ -65,7 +65,7 @@ const traveLinkF = "/" + travelLink
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        {introText}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

@@ -1,78 +1,77 @@
-
-import * as React from 'react';
-import {AppBar,  Toolbar,  Typography, Container,  Button, } from '@mui/material/'
-import LoginIcon from '@mui/icons-material/Login';
+import * as React from "react";
+import { AppBar, Toolbar, Typography, Container, Button } from "@mui/material/";
+import LoginIcon from "@mui/icons-material/Login";
 import { Link } from "react-router-dom";
-import AddHomeIcon from '@mui/icons-material/AddHome';
+import AddHomeIcon from "@mui/icons-material/AddHome";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
 
+//
+
+/* export default function ImageAvatars() {
+  return (
+    <Stack direction="row" spacing={2}>
+      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+      
+      <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+    </Stack>
+  );
+} */
 
 const Navbar = (props) => {
-
   return (
     <AppBar position="sticky">
-      <Container maxWidth="xl">
-        <Toolbar variant="dense" disableGutters>
-          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'warnock',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-            >
-         
-          </Typography></Link>
-        
+      <Container maxWidth="xl" spacing={2}>
+        <Toolbar
+          variant="dense"
+          disableGutters
+          sx={{ flex: "display", justifyContent: "space-between" }}
+        >
+          <div>
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="Nav-Bar">
+                <img
+                  src="https://res.cloudinary.com/dad5dandd/image/upload/v1666935109/pictureUpload/logoFormatted1_idj3ip.png"
+                  alt="logo"
+                />
+              </div>
+            </Link>
+          </div>
 
-                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}><Typography
-            variant="h5"
-            noWrap
-              sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'warnock-pro',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            
-          </Typography></Link>
-            {/* if there is an active user */}
-    
-        <Link to="/signup"  style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Button variant="contained" endIcon={<LoginIcon />} disableRipple>     
-          Access
-        </Button>
-          </Link>
-
-          <Link to="/login"  style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Button variant="contained" endIcon={<LoginIcon />} disableRipple>     
-          Log in
-        </Button>
-          </Link>
-
-          <Link to="/"  style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Button variant="contained" endIcon={<AddHomeIcon />} disableRipple>     
-          Home
-        </Button>
-          </Link>
-
-        
+          <div style={{display:"flex"}}>
+            <div style={{marginLeft:10}}>
+              <Link
+                to="/signup"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Button
+                  variant="contained"
+                  endIcon={<LoginIcon />}
+                  disableRipple
+                >
+                  Sign Up
+                </Button>
+              </Link>
+            </div>
+            <div style={{marginLeft:10}} >
+              <Link
+                to="/login"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Button
+                  variant="contained"
+                  endIcon={<LoginIcon />}
+                  disableRipple
+                >
+                  Log In
+                </Button>
+              </Link>
+            </div>
+          </div>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
 
-export default Navbar
-
+export default Navbar;

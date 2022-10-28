@@ -65,8 +65,10 @@ const UploadButtons = ({
   return (
     <>
 
-            <div>
-              <label htmlFor="icon-button-file">
+<Stack direction="row" alignItems="center" spacing={2}>
+              
+                
+              <Button variant="contained" component="label">
                 <Input
                   accept="image/*"
                   id="icon-button-file"
@@ -74,6 +76,13 @@ const UploadButtons = ({
                   type="file"
                   onChange={handleUpload}
                 />
+
+<label htmlFor="icon-button-file" >
+                Upload your picture
+              </label>
+                </Button>
+
+
                 <IconButton
                   color="primary"
                   aria-label="upload picture"
@@ -82,8 +91,8 @@ const UploadButtons = ({
                 >
                   <AddAPhotoIcon />
                 </IconButton>
-              </label>
-            </div>
+                
+              </Stack>
 
 
     </>
@@ -94,20 +103,17 @@ export default UploadButtons;
 
 /* 
 
-
-
-UploadButtons()
-
-    <Stack direction="row" alignItems="center" spacing={2}>
+    
       <Button variant="contained" component="label">
         Upload
         <input hidden accept="image/*" multiple type="file" />
       </Button>
+
       <IconButton color="primary" aria-label="upload picture" component="label">
         <input hidden accept="image/*" type="file" />
-        <PhotoCamera />
+        <
       </IconButton>
-    </Stack>
+    
 
 
 

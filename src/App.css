@@ -49,6 +49,13 @@ background-color:black
   background-color:white
 }
 
+.Nav-Bar >img{
+  width: 150px ;
+  height: auto
+ 
+
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
