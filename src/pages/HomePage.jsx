@@ -27,14 +27,11 @@ const HomePage = () => {
           }}
         >
           <Typography variant="h3" color="red">
-            1
+          Mission:
           </Typography>
 
           <Typography variant="body1" color="white">
-            Muchos de los extranjeros que visitan perú llegan a lima con el
-            propósito de hacer transbordo a cuzco y los días que se quedan en
-            lima no saben qué hacer. Nuestra misión es conectar el turismo de
-            las ciudades del perú con rutas e itinerarios más dinámicos,
+           To enhance the value of tourism by enabling new interactions between tourists and tourist sites and businesses.
           </Typography>
         </Box>
       </div>
@@ -53,14 +50,11 @@ const HomePage = () => {
           }}
         >
           <Typography variant="h3" color="red">
-            2
+          Vision: 
           </Typography>
 
           <Typography variant="body1" color="white">
-            Muchos de los extranjeros que visitan perú llegan a lima con el
-            propósito de hacer transbordo a cuzco y los días que se quedan en
-            lima no saben qué hacer. Nuestra misión es conectar el turismo de
-            las ciudades del perú con rutas e itinerarios más dinámicos,
+         To make tourists have a more complete experience of their trips and that tourist sites and businesses have greater recognition.
           </Typography>
         </Box>
       </div>
@@ -79,14 +73,11 @@ const HomePage = () => {
           }}
         >
           <Typography variant="h3" color="red">
-            3
+          Solution:
           </Typography>
 
           <Typography variant="body1" color="white">
-            Muchos de los extranjeros que visitan perú llegan a lima con el
-            propósito de hacer transbordo a cuzco y los días que se quedan en
-            lima no saben qué hacer. Nuestra misión es conectar el turismo de
-            las ciudades del perú con rutas e itinerarios más dinámicos,
+          Leverage technology to encourage people to get to know tourist sites through tokens that can be redeemed for discounts at our partners and promote mass adoption within the solana network.
           </Typography>
         </Box>
       </div>

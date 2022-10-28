@@ -1,11 +1,103 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import Stack from '@mui/material/Stack';
+import * as React from "react";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import Stack from "@mui/material/Stack";
+import { registerReceipt } from "../services/user-ws";
+import { uploadURL} from "../services/api.js"
+import { useState } from "react";
+import { styled } from "@mui/material/styles";
+import Axios from 'axios'
+import {
+  Typography,
+  Box,
+  IconButton,
+  Paper,
+  Button,
+  TextField,
+} from "@mui/material";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import { Navigate } from "react-router-dom";
 
-export default function UploadButtons() {
+const UploadButtons = ({
+  user,
+  setUser,
+  authentication,
+  sendMessage,
+  editHandler,
+}) => {
+  const [values, setValues] = useState({
+    imageUrl: undefined,
+  });
+
+
+
+  const Input = styled("input")({
+    display: "none",
+  });
+
+  const handleUpload = async (e) => {
+    
+    
+    const image = e.target.files[0]; //aqui está almacenado toda la imagen.
+    console.log("yo soy " , image)
+    const formData = new FormData();
+    formData.append("image", image);
+    console.log("yo soy formData", formData)
+
+    Axios.post(uploadURL,formData).then(
+      (responseAxios)=>{
+      
+        console.log("yo soy url imagen subida", responseAxios.data.url.uri)
+    registerReceipt(formData)
+      .then((res) => {
+        if (res.status) {
+          console.log("yo soy res de upload", res.data)
+          
+        } else {
+          console.log(res.data.errorMessage)
+        }
+      })
+    })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
+
   return (
+    <>
+
+            <div>
+              <label htmlFor="icon-button-file">
+                <Input
+                  accept="image/*"
+                  id="icon-button-file"
+                  name="imageUrl"
+                  type="file"
+                  onChange={handleUpload}
+                />
+                <IconButton
+                  color="primary"
+                  aria-label="upload picture"
+                  component="span"
+                  sx={{ mb: 2 }}
+                >
+                  <AddAPhotoIcon />
+                </IconButton>
+              </label>
+            </div>
+
+
+    </>
+  );
+};
+
+export default UploadButtons;
+
+/* 
+
+
+
+UploadButtons()
+
     <Stack direction="row" alignItems="center" spacing={2}>
       <Button variant="contained" component="label">
         Upload
@@ -16,5 +108,9 @@ export default function UploadButtons() {
         <PhotoCamera />
       </IconButton>
     </Stack>
-  );
-}
+
+
+
+
+    
+    */

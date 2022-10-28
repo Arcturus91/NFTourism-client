@@ -12,6 +12,10 @@ const ReligiousPage = (props) => {
 console.log(props)
   const {user} = props
 
+
+
+
+
   return (
     <Container>
 

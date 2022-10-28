@@ -6,4 +6,4 @@ export { default as RoutesPicsList} from './RoutesPicsList'
 export {default as SendSOLToRandomAddress} from './SendSOLToRandomAddress'
 export {default as CountryRouteReviewCard} from './CountryLevelRoutes'
 export { default as StickyFooter } from './Footer'
-export { default as UploadButtons} from './ButtonUpload'
+export { default as UploadButtons} from './ButtonUpload';
