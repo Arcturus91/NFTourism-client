@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 
-const keyG = "AIzaSyBVX6det7frvJDg6oKn1PY_RrZAo8qwhOI"
+const keyG = "xxxxxx"
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
