@@ -11,82 +11,88 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import {useState}  from "react";
+import { useState } from "react";
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { Keypair, SystemProgram, Transaction } from "@solana/web3.js";
 import { FC, useCallback } from "react";
 import * as solanaWeb3 from "@solana/web3.js";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
 export default function SolanaInput(props) {
-    const [destinataryAddress,setDestinataryAddress] = useState(undefined)
-    const [sendAmount,setSendAmount] = useState(undefined)
-    const { connection } = useConnection();
-    const { publicKey, sendTransaction } = useWallet();
 
-const {user} = props;
+  const [destinataryAddress, setDestinataryAddress] = useState(undefined);
+  const [sendAmount, setSendAmount] = useState(undefined);
+  const { connection } = useConnection();
+  const { publicKey, sendTransaction } = useWallet();
+  const { user } = props;
+  const navigate = useNavigate();
 
-const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     //console.log(event)
     //here is where we have the axios call
     const data = new FormData(event.currentTarget);
 
     let values = {
-        destinataryWallet: data.get("destinataryWallet"),
-        solanaAmount: Number(data.get("solanaAmount")),
+      destinataryWallet: data.get("destinataryWallet"),
+      solanaAmount: Number(data.get("solanaAmount")),
     };
-    setDestinataryAddress(values.destinataryWallet)
-    setSendAmount(values.solanaAmount)
-    console.log("los valores del formulario",sendAmount,destinataryAddress )
-  };
-  
- const onClick= useCallback(async () => {
-
-    console.log("soy amount input", sendAmount )
-      if (!publicKey) throw new WalletNotConnectedError();
-  
-      // 890880 lamports as of 2022-09-01
-  const costInLamports = await connection.getMinimumBalanceForRentExemption(0);
-const lamports = (Number(solanaWeb3.LAMPORTS_PER_SOL))*sendAmount  // esto es 1
-   //sendAmount = 100, number
-  console.log("yo soy lamports", lamports)
-      const transaction = new Transaction().add(
-        SystemProgram.transfer({
-          fromPubkey: publicKey,
-          toPubkey: destinataryAddress,
-          lamports,
-        })
-      );
+    setDestinataryAddress(values.destinataryWallet);
+    setSendAmount(values.solanaAmount);
+    console.log("los valores del formulario", sendAmount, destinataryAddress);
     
-      console.log("am transaction", transaction);
-  
-      const {
-        context: { slot: minContextSlot },
-        value: { blockhash, lastValidBlockHeight },
-      } = await connection.getLatestBlockhashAndContext();
-  
-      const signature = await sendTransaction(transaction, connection, {
-        minContextSlot,
-      });
-  
-      console.log("Signature", signature);
-  
-      const confirmation = await connection.confirmTransaction({
-        blockhash,
-        lastValidBlockHeight,
-        signature,
-      });
-  
-      console.log("Confirmation", confirmation);
-    }, [publicKey, sendTransaction, connection,sendAmount]);
+  };
 
 
-console.log("solana input", user)
+
+  const onClick = useCallback(async () => {
+    
+    if (!publicKey) throw new WalletNotConnectedError();
+
+    // 890880 lamports as of 2022-09-01
+  
+    const lamports = Number(solanaWeb3.LAMPORTS_PER_SOL) * sendAmount; // esto es 1
+    //sendAmount = 100, number
+    console.log("yo soy lamports", lamports);
+    const transaction = new Transaction().add(
+      SystemProgram.transfer({
+        fromPubkey: publicKey,
+        toPubkey: destinataryAddress,
+        lamports,
+      })
+    );
+
+    console.log("am transaction", transaction);
+
+    const {
+      context: { slot: minContextSlot },
+      value: { blockhash, lastValidBlockHeight },
+    } = await connection.getLatestBlockhashAndContext();
+
+    const signature = await sendTransaction(transaction, connection, {
+      minContextSlot,
+    });
+
+    console.log("Signature", signature);
+
+    const confirmation = await connection.confirmTransaction({
+      blockhash,
+      lastValidBlockHeight,
+      signature,
+    });
 
 
+console.log("Confirmation", confirmation);
+if(confirmation){
+  navigate("/success");
+}
+
+  }, [publicKey, sendTransaction, connection, sendAmount]);
+
+  
 
   return (
     <ThemeProvider theme={theme}>
@@ -156,23 +162,20 @@ console.log("solana input", user)
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
-              
-            
-<>
-      {publicKey && user.role === "Admin" ? (
-        <Button sx={{ mt: 3, mb: 2 }}
-          type="submit"
-          variant="contained"
-          style={{ backgroundColor: "#512da8", height: 48 }}
-          onClick={onClick}
-        >
-          Send SOLANA
-        </Button>
-      ) : null}
-    </>
 
-
-
+              <>
+                {publicKey && user.role === "Admin" ? (
+                  <Button
+                    sx={{ mt: 3, mb: 2 }}
+                    type="submit"
+                    variant="contained"
+                    style={{ backgroundColor: "#512da8", height: 48 }}
+                    onClick={onClick}
+                  >
+                    Send SOLANA
+                  </Button>
+                ) : null}
+              </>
 
 
 

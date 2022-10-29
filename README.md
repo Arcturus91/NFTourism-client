@@ -16,12 +16,12 @@ A NFT for turist in Peru 💰
 ### **Credentials**
 
 - **Administrator:**
-  Correo electrónico:
-  Contraseña:
+  Correo electrónico: "arturo@gmail.com",
+  Contraseña:Solticket12345
 
 - **Recently registered user:**
-  Correo electrónico:
-  Contraseña:
+  Correo electrónico: "eduardo@gmail.com",
+  Contraseña:Solticket12345
 
 ## Admin Routes
 
@@ -35,8 +35,8 @@ http://localhost:3000/myprofile
 
 ```
 {
-  "email": "arc@gmail.com",
-  "password": "12345"
+ Correo electrónico: "arturo@gmail.com",
+  Contraseña:Solticket12345
 }
 ```
 
@@ -80,8 +80,8 @@ http://localhost:3000/login
 
 ```
 {
-  "email": "admin@gmail.com",
-  "password": "12345"
+Correo electrónico: "arturo@gmail.com",
+  Contraseña:Solticket12345
 }
 ```
 
@@ -95,8 +95,8 @@ http://localhost:3000/login
 
 ```
 {
-  "email": "arc@gmail.com",
-  "password": "12345"
+Correo electrónico: "eduardo@gmail.com",
+  Contraseña:Solticket12345
 }
 ```
 

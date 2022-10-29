@@ -1,5 +1,5 @@
 import * as React from "react";
-import { EnhancedTable, UsersList } from "../components";
+import { EnhancedTable, UsersList, SimpleMap } from "../components";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -104,6 +104,8 @@ AlpacaExchange/alpacaUserId2_km8k9e.png"
             </Typography>
 
             <EnhancedTable />
+
+
           </>
         </p>
       )}
