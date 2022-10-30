@@ -1,50 +1,39 @@
 # NFTurist
 
-A NFT for turist in Peru 💰
+A NFT for turists in Peru 💰
 
 ## Features:
 
-- ✍️ Register places visited
-- 📱 Get the user images and convert them to nft
-- 👨‍💼 Includes a button to generate the wallet and another button to link the wallet
-- ✍️ Register user in NFTourist
-- 📈 Certify the user of his visit through an nft
+- ✍️ Register location of places visited by the users 
+- ✍️ Allows them to upload picture as a proof
+- 📱 Such picture will be sent back to the user Phantom Wallet as an NFT
+- 👨‍💼 Includes a button to link the wallet of User and Admin
+- 👑 Admin has the rights to send Solana to User wallets as CashBacks.
+- 📸  Admin can see all pictures Users upload
+- 💻 You can test the app as an administrator in [NFTurism Heroku App](https://soltickets.herokuapp.com/)
   > >
 
-## Admin Routes
+## Routes
 
 ### **Credentials**
 
 - **Administrator:**
-  Correo electrónico: "arturo@gmail.com",
-  Contraseña:Solticket12345
+  email: "arturo@gmail.com",
+  email:Solticket12345
 
 - **Recently registered user:**
-  Correo electrónico: "eduardo@gmail.com",
-  Contraseña:Solticket12345
+  email: "eduardo@gmail.com",
+  email:Solticket12345
 
-## Admin Routes
+  
 
+## Home
 ---
-
-### **POST** profile
-
-```
-http://localhost:3000/myprofile
-```
+### **get** Home page
 
 ```
-{
- Correo electrónico: "arturo@gmail.com",
-  Contraseña:Solticket12345
-}
+http://localhost:5005/api/
 ```
-
----
-
----
-
-\*\*
 
 ## User Routes
 
@@ -56,83 +45,57 @@ http://localhost:3000/myprofile
 http://localhost:5005/api/user/my-profile
 ```
 
-Headers Content-Type application/json
+---
+
+### **Post** upload photo
+
+```
+http://localhost:5005/api/user/my-profile/singleUpload
+```
+
+```
+http://localhost:5005/api/user/my-profile/uploadReceipt
+```
+
 
 ---
+
+
 
 ## Auth Routes
 
----
-
-### **GET** logout
-
-```
-http://localhost:3000/logout
-```
 
 ---
 
-### **POST** loginAdmin
+### **POST** login
 
 ```
-http://localhost:3000/login
+http://localhost:5005/api/auth/login
 ```
 
 ```
 {
-Correo electrónico: "arturo@gmail.com",
-  Contraseña:Solticket12345
+email: "arturo@gmail.com",
+  email:Solticket12345
 }
 ```
 
 ---
 
-### **POST** loginUser
+### **POST** signup
 
 ```
-http://localhost:3000/login
-```
-
-```
-{
-Correo electrónico: "eduardo@gmail.com",
-  Contraseña:Solticket12345
-}
-```
-
----
-
-### **POST** signUpAdmin
-
-```
-http://localhost:3000/signup
+http://localhost:5005/api/auth/login
 ```
 
 ```
 {
-  "email": "admin@gmail.com",
-  "password": "12345",
-  "confirmPassword": "12345",
-  "firstName": "Victor",
-  "lastName": "Barrantes"
-}
-```
-
----
-
-### **POST** signUpUser
-
-```
-http://localhost:3000/signup
-```
-
-```
-{
-  "email": "arc@gmail.com",
-  "password": "12345",
-  "confirmPassword": "12345",
-  "firstName": "Arturo",
-  "lastName": "Barrantes"
+firstName: eduardo
+lastName: camacho
+email: eduardo@gmail.com
+password: Solticket12345
+confirmPassword: Solticket12345
+walletAddress:HrK7q7MsddzJYztFd59T79FrUt8kQMTbdJxpwzUCTZvQ
 }
 ```
 
