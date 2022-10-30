@@ -1,22 +1,27 @@
-import { SignUpPage, HomePage, ProfilePage,LogInPage, ReligiousPage, SendSolanaPage , SuccessPage} from "../pages";
+import {
+  SignUpPage,
+  HomePage,
+  ProfilePage,
+  LogInPage,
+  ReligiousPage,
+  SendSolanaPage
+} from "../pages";
 
 const routes = (props) => {
   return [
     {
-      path: "/", 
+      path: "/",
       element: <HomePage />,
     },
     {
       path: "/signup",
-      element: <SignUpPage {...props} />, 
+      element: <SignUpPage {...props} />,
     },
     {
       path: "/login",
-      element: <LogInPage {...props} />, 
+      element: <LogInPage {...props} />,
     },
 
-    
- 
     {
       path: "/profile",
       element: <ProfilePage {...props} />,
@@ -36,13 +41,7 @@ const routes = (props) => {
     {
       path: "/sendSolana",
       element: <SendSolanaPage {...props} />,
-    }
-
-    ,
-    {
-      path: "/success",
-      element: <SuccessPage {...props} />,
-    }
+    },
   ];
 };
 

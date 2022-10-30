@@ -10,4 +10,4 @@ export { default as UsersList } from "./UsersList";
 export {default as  ButtonLoading} from "./ButtonLoading"
 export { default as SolanaInput } from "./SolanaInput";
 export { default as SimpleMap} from "./SimpleMap.jsx";
-export { default as SuccessAlert} from "./SuccessAlert.jsx";
+export { default as SendingSuccess} from "./SendingSuccess.jsx";

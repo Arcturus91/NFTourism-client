@@ -35,13 +35,11 @@ const UploadButtons = () => {
         console.log("img uploaded url", responseAxios.data.url.uri);
         registerReceipt(formData).then((res) => {
           if (res.status) {
-            console.log("res upload", res.data);
-
-            setUploadSuccess(false)
-
+            console.log("UPLOAD SUCCESS", res.data);
+            setUploadSuccess((prevValue)=>!prevValue)
 
           } else {
-            console.log(res.data.errorMessage);
+            console.log("AM AN ERROR",res.data.errorMessage);
           }
         });
       })

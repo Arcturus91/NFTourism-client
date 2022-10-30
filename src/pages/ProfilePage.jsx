@@ -104,8 +104,6 @@ AlpacaExchange/alpacaUserId2_km8k9e.png"
             </Typography>
 
             <EnhancedTable />
-
-
           </>
         </p>
       )}

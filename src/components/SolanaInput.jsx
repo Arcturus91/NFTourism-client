@@ -14,21 +14,24 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { Keypair, SystemProgram, Transaction } from "@solana/web3.js";
-import { FC, useCallback } from "react";
+import {  SystemProgram, Transaction } from "@solana/web3.js";
+import { useCallback } from "react";
 import * as solanaWeb3 from "@solana/web3.js";
-import { useNavigate } from "react-router-dom";
+import {SendingSuccess} from "./index.js" 
 
 const theme = createTheme();
 
 export default function SolanaInput(props) {
+  const { user } = props;
 
   const [destinataryAddress, setDestinataryAddress] = useState(undefined);
   const [sendAmount, setSendAmount] = useState(undefined);
+  const [sendConfirmation,setSendConfirmation] = useState(undefined)
+  const [signature,setSignature] = useState(undefined)
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
-  const { user } = props;
-  const navigate = useNavigate();
+  
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,9 +44,7 @@ export default function SolanaInput(props) {
       solanaAmount: Number(data.get("solanaAmount")),
     };
     setDestinataryAddress(values.destinataryWallet);
-    setSendAmount(values.solanaAmount);
-    console.log("los valores del formulario", sendAmount, destinataryAddress);
-    
+    setSendAmount(values.solanaAmount);    
   };
 
 
@@ -54,7 +55,7 @@ export default function SolanaInput(props) {
 
     // 890880 lamports as of 2022-09-01
   
-    const lamports = Number(solanaWeb3.LAMPORTS_PER_SOL) * sendAmount; // esto es 1
+    const lamports = Number(solanaWeb3.LAMPORTS_PER_SOL) * sendAmount; 
     //sendAmount = 100, number
     console.log("yo soy lamports", lamports);
     const transaction = new Transaction().add(
@@ -76,7 +77,7 @@ export default function SolanaInput(props) {
       minContextSlot,
     });
 
-    console.log("Signature", signature);
+
 
     const confirmation = await connection.confirmTransaction({
       blockhash,
@@ -84,13 +85,12 @@ export default function SolanaInput(props) {
       signature,
     });
 
+console.log("Confirmation & signature", confirmation,signature);
 
-console.log("Confirmation", confirmation);
-if(confirmation){
-  navigate("/success");
-}
+setSignature(signature)
+setSendConfirmation(confirmation)
 
-  }, [publicKey, sendTransaction, connection, sendAmount]);
+  }, [publicKey, sendTransaction, connection, sendAmount,sendConfirmation]);
 
   
 
@@ -106,6 +106,7 @@ if(confirmation){
           sx={{
             backgroundImage:
               "url(https://miro.medium.com/max/650/0*UZLct2SobU0yaVB0.jpg)",
+
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -177,9 +178,17 @@ if(confirmation){
                 ) : null}
               </>
 
-
-
             </Box>
+
+            <>
+{!sendConfirmation
+ ? (null): (
+ <SendingSuccess sendConfirmation = {sendConfirmation} destinataryAddress={destinataryAddress} signature={signature} user={user}/>
+)}
+</>
+
+
+
           </Box>
         </Grid>
       </Grid>

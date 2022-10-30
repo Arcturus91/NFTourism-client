@@ -39,7 +39,7 @@ export default function StickyFooter() {
       >
         <Container maxWidth="sm">
           <Typography variant="body1">
-            Developer by Arturo Barrantes for Web Latam Hackathon 2022
+            Developed by Arturo Barrantes for Web Latam Hackathon 2022
           </Typography>
           <Copyright />
         </Container>
