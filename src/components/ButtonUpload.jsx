@@ -10,7 +10,6 @@ import {
   Button,
 } from "@mui/material";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-
 import {ButtonLoading} from "./index.js"
 
 
@@ -26,7 +25,7 @@ const UploadButtons = () => {
 
   const handleUpload = async (e) => {
     const image = e.target.files[0]; //aqui está almacenado toda la imagen.
-    setUploadSuccess(true)
+    setUploadSuccess((prevValue)=>!prevValue)
     const formData = new FormData();
     formData.append("image", image);
 

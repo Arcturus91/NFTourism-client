@@ -21,31 +21,31 @@ export default function RoutesPicsList() {
 
 const itemData = [
   {
-    img: 'https://ilamdir.org/blobs/ilamdir/w300h300-cropped/328/2020/31/convento-santo-domingo.jpg',
+    img: 'https://res.cloudinary.com/dad5dandd/image/upload/v1667343357/NFTourism%20Assets/religiousRoutes/santoDomingo_tioh25.jpg',
     title: 'Santo Domingo',
   },
   {
-    img: 'http://www.guiadeviajesperu.com/wp-content/uploads/2019/12/iglesia-lima.jpg',
+    img: 'https://res.cloudinary.com/dad5dandd/image/upload/v1667343359/NFTourism%20Assets/religiousRoutes/sanFrancisco_tg5mdp.jpg',
     title: 'San Francisco',
   },
   {
-    img: 'https://refrinoticias.com/wp-content/uploads/2015/10/19218687251489261498172492.jpg',
+    img: 'https://res.cloudinary.com/dad5dandd/image/upload/v1667343357/NFTourism%20Assets/religiousRoutes/catedralLima_u0ed7p.jpg',
     title: 'Catedral de Lima',
   },
   {
-    img: 'https://freewalkingtoursperu.com/wp-content/uploads/2020/10/iglesia-la-merced-lima-centro-historico.jpg',
+    img: 'https://res.cloudinary.com/dad5dandd/image/upload/v1667343357/NFTourism%20Assets/religiousRoutes/laMerced_o179mz.jpg',
     title: 'La Merced',
   },
   {
-    img: 'https://s.ruta0.net/cache/img680/12651.jpg',
+    img: 'https://res.cloudinary.com/dad5dandd/image/upload/v1667343357/NFTourism%20Assets/religiousRoutes/virgenMilagrosa_mucmbs.jpg',
     title: 'Virgen Milagrosa',
   },
   {
-    img: 'http://www.guiadeviajesperu.com/wp-content/uploads/2019/12/iglesia-lima-3.jpg',
+    img: 'https://res.cloudinary.com/dad5dandd/image/upload/v1667343358/NFTourism%20Assets/religiousRoutes/nazarenas_zhpxrx.jpg',
     title: 'Las Nazarenas',
   },
   {
-    img: 'https://lexlatin.com/sites/default/files/catedral_senora_del_pilar_lima_peru.jpg',
+    img: 'https://res.cloudinary.com/dad5dandd/image/upload/v1667343358/NFTourism%20Assets/religiousRoutes/virgenPilar_nplu7b.jpg',
     title: 'Virgen del Pilar',
   },
 ]

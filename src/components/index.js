@@ -11,3 +11,5 @@ export {default as  ButtonLoading} from "./ButtonLoading"
 export { default as SolanaInput } from "./SolanaInput";
 export { default as SimpleMap} from "./SimpleMap.jsx";
 export { default as SendingSuccess} from "./SendingSuccess.jsx";
+export { default as ButtonLocation} from "./ButtonLocation";
+export { default as notLogged } from "./notLogged";

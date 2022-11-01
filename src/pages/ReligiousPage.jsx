@@ -2,10 +2,16 @@ import React from "react";
 import { RoutesPicsList } from "../components";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { UploadButtons } from "../components";
+import {
+  UploadButtons,
+  SimpleMap,
+  ButtonLocation,
+
+} from "../components";
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
 const ReligiousPage = (props) => {
-  console.log("rel props", props);
   const { user } = props;
 
   return (
@@ -14,20 +20,39 @@ const ReligiousPage = (props) => {
         Religious Route
       </Typography>
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        {user ? <UploadButtons /> : null}
+      <div
+        style={{
+          display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+          width: "100%",
+        }}
+      >
+        {user ? (
+          <>
+            <UploadButtons />
+            <ButtonLocation />
+          </>
+        ) : (
+          <>
+          <Stack sx={{ my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center', }} spacing={2}>
+      <Alert severity="warning">For displaying full content of this page, you need to sign up / log in</Alert>
+    </Stack>
+          </>
+        )}
       </div>
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <RoutesPicsList />
       </div>
-      <div>
-        <img
-          style={{ height: "auto", width: "50%" }}
-          src="https://static.abc.es/media/tecnologia/2020/07/31/google-maps-k8sB--1248x698@abc.jpg"
-          alt="googleMaps"
-        />
-      </div>
+
+      <Container maxWidth="lg">
+        <SimpleMap />
+      </Container>
 
       <Container>
         <Typography variant="h6" color="white" sx={{ mt: 10, mb: 10 }}>
