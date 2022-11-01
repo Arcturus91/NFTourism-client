@@ -90,7 +90,7 @@ console.log("Confirmation & signature", confirmation,signature);
 setSignature(signature)
 setSendConfirmation(confirmation)
 
-  }, [publicKey, sendTransaction, connection, sendAmount,sendConfirmation]);
+  }, [publicKey, sendTransaction, connection, sendAmount,destinataryAddress]);
 
   
 

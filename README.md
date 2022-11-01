@@ -32,7 +32,7 @@ A NFT for turists in Peru 💰
 ### **get** Home page
 
 ```
-http://localhost:5005/api/
+https://soltickets.herokuapp.com/
 ```
 
 ## User Routes
@@ -42,20 +42,17 @@ http://localhost:5005/api/
 ### **GET** profile
 
 ```
-http://localhost:5005/api/user/my-profile
+https://soltickets.herokuapp.com/profile
 ```
 
 ---
 
-### **Post** upload photo
+### **Get** Religious Route
 
 ```
-http://localhost:5005/api/user/my-profile/singleUpload
+https://soltickets.herokuapp.com/religiousroute
 ```
 
-```
-http://localhost:5005/api/user/my-profile/uploadReceipt
-```
 
 
 ---
@@ -70,12 +67,12 @@ http://localhost:5005/api/user/my-profile/uploadReceipt
 ### **POST** login
 
 ```
-http://localhost:5005/api/auth/login
+https://soltickets.herokuapp.com/login
 ```
 
 ```
 {
-email: "arturo@gmail.com",
+email: "eduardo@gmail.com",
   email:Solticket12345
 }
 ```
@@ -85,7 +82,7 @@ email: "arturo@gmail.com",
 ### **POST** signup
 
 ```
-http://localhost:5005/api/auth/login
+https://soltickets.herokuapp.com/signup
 ```
 
 ```
