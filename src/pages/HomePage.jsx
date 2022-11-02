@@ -172,11 +172,4 @@ const HomePage = () => {
 
 export default HomePage;
 
-/* 
-Muchos de los extranjeros que visitan perú llegan a lima con el propósito de hacer
- transbordo a cuzco y los días que se quedan en lima no saben qué hacer. Nuestra misión es conectar 
- el turismo de las ciudades del perú con rutas e  itinerarios más dinámicos, para ello tenemos un equipo 
- multidisciplinario como t.i y negocios donde en la actualidad no hay empresas que se dediquen a fomentar el 
- turismo peruano de la manera como lo hemos mapeado 
-Nosotros como soltickets fomentamos los destinos turís
- */
+
