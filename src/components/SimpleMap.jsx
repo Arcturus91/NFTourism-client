@@ -21,7 +21,6 @@ function Map() {
     const point2santoDomingo = useMemo(() => ({ lat:  -12.0440764, lng: -77.0319351 }), []);
     const point3nazarenas = useMemo(() => ({ lat: -12.0455684, lng: -77.0374216 }), []);
 
-   
 
   
     return (
